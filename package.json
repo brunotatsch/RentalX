@@ -1,5 +1,5 @@
 {
-  "name": "Chapter_2",
+  "name": "chapter-2-NodeJs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,7 @@
   "devDependencies": {
     "@types/express": "^4.17.12",
     "@types/typescript": "^2.0.0",
+    "@types/uuid": "^8.3.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -21,6 +22,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "eslint-config-airbnb-base": "^14.2.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
   }
 }
