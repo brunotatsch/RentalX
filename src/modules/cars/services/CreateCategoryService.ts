@@ -1,5 +1,5 @@
 import { Category } from "../model/Category"
-import { CategoryRepository } from "../repositories/CategoriesRepository";
+import { ICreateCategoriesRepository } from "../repositories/IcategoriesRepository";
 
 interface iRequest {
   name: string;
@@ -8,7 +8,7 @@ interface iRequest {
 
 class CreateCategoryService {
 
-  constructor(private categoryRepository: CategoryRepository) {
+  constructor(private categoryRepository: ICreateCategoriesRepository) {
 
   }
 
