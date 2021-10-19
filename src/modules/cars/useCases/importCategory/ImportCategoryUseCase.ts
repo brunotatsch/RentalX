@@ -2,6 +2,7 @@ import fs from 'fs';
 import csvParse from 'csv-parse';
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 import { resolveModuleName } from 'typescript';
+import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository';
 
 interface IImportCategory {
   name: string;
@@ -37,9 +38,22 @@ class ImportCategoryUseCase {
   }
 
 
-  async execute(file: Express.Multer.File): Promise<void> { 
+  async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file);
-    console.log(categories);
+
+    categories.map(async (category) => {
+      const { name, description } = category;
+
+      const existsCategory = this.categoriesRepository.findByName(name);
+
+      if (!existsCategory) {
+        this.categoriesRepository.create({
+          name,
+          description
+        });
+
+      }
+    });
   }
 
 }
